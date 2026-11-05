@@ -224,3 +224,15 @@ section,.hero,.page-hero,.pband,footer{overflow-x:clip}
 @media(max-width:380px){
   .specs{grid-template-columns:minmax(0,1fr)}
 }
+
+/* ================= LOGO MARK ================= */
+.logo{display:inline-flex;align-items:center;gap:10px}
+.logo .logomark{flex:none;display:block}
+.logo .lt{line-height:1}
+.ldr .logo.ldrlogo{flex-direction:column;gap:16px}
+.ldr .logo.ldrlogo .logomark{animation:lgpop .9s ease both}
+@keyframes lgpop{from{opacity:0;transform:translateY(10px) scale(.92)}to{opacity:1;transform:none}}
+footer .logo{margin-bottom:6px}
+/* soft logo watermark inside hero sections */
+.hero:after{content:"";position:absolute;left:-60px;bottom:-70px;width:300px;height:300px;background:url("/favicon-mark.svg") no-repeat center/contain;opacity:.06;pointer-events:none}
+@media(max-width:600px){.logo .logomark{height:32px;width:auto}.ldr .logo.ldrlogo .logomark{height:64px}.hero:after{display:none}}
